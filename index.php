@@ -4,18 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>skillTrain</title>
+
+    <!--Bootstap CSS CDN-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <?php 
-      include('header.html');
-      include('footer.html');
-    ?>
+
+    <!--Bootstap icon CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Load Alpine.js (Defer Loading) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <?php include('header.html');?>
+
 </head>
 <body>
     <div class="container">
         <main id="main">
-            sdLorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo corrupti itaque illum sapiente! Dicta et fugit magnam, nihil voluptates quod eius quis vitae aspernatur facere? Voluptatibus vero cupiditate odit cumque sunt repellendus similique eum eveniet earum eius excepturi corporis, maiores ducimus quasi assumenda omnis, placeat, aut in distinctio aliquid. Praesentium quidem harum magnam laboriosam sint aliquam non, possimus accusamus vel voluptatem incidunt, sequi debitis exercitationem consectetur qui excepturi suscipit hic, facilis modi nisi? Eos, rem? Beatae amet perspiciatis possimus corrupti dolore dolores porro eligendi, eaque ad, architecto quam est. Laudantium distinctio impedit culpa autem eaque perferendis ipsa nobis eius. Sint ipsum id tenetur earum repudiandae sequi laudantium magni obcaecati odit a hic necessitatibus fugiat deserunt iusto nulla assumenda, mollitia error impedit voluptates facilis nisi cum aut! Ex, expedita?
+            <div class="col p-5 ">
+                <div class="container">
+                    <div class="d-flex">
+                        <div class="container">
+                            <h1>Never stop learning</h1>
+                            <p>With skillTrain, explore many exciting courses to expand your knowledge and skills, now easily accesible by your fingertips.</p>
+                            <div class="d-flex">
+                            <a class="btn btn-primary m-2 text-nowrap" href="#" role="button">Start Learning</a>
+                            <button type="button" class="btn btn-secondary m-2 text-nowrap">Why skillTrain?</button>
+                            </div>
+                        </div>
+                        <div class="container d-none d-md-inline">
+                            INSERT IMAGE HERE
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col p-5">
+                <div class="container" id="whyST">
+                    <div class="d-flex">
+                        <div class="container">
+                            <h1>Why skillTrain?</h1>
+                            <p>Comparison to other online learning platforms.</p>
+                            <div class="d-flex flex-column flex-md-row">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                                <div class="card" style="width: 18rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                                <div class="card" style="width: 18rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
+
+    <?php include('footer.html');?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </body>
 </html>
