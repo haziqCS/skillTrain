@@ -19,15 +19,15 @@
 <body>
     <div class="container">
         <main id="main">
-            <div class="col p-5 ">
-                <div class="container">
-                    <div class="d-flex">
+            <div class="col p-5 vh-100">
+                <div class="container h-100">
+                    <div class="d-flex h-100 align-items-center justify-content-center pb-5">
                         <div class="container">
                             <h1>Never stop learning</h1>
                             <p>With skillTrain, explore many exciting courses to expand your knowledge and skills, now easily accesible by your fingertips.</p>
                             <div class="d-flex">
-                            <a class="btn btn-primary m-2 text-nowrap" href="#" role="button">Start Learning</a>
-                            <button type="button" class="btn btn-secondary m-2 text-nowrap">Why skillTrain?</button>
+                                <a class="btn btn-primary m-2 text-nowrap" href="explore.php" role="button">Start Learning</a>
+                                <a class="btn btn-secondary m-2 text-nowrap" href="#whyST" role="button">Why skillTrain?</a>
                             </div>
                         </div>
                         <div class="container d-none d-md-inline">
