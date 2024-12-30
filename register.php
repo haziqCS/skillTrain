@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>skillTrain</title>
+    <title>skillTrain - Register</title>
 
-    <!--Bootstap CSS CDN-->
+    <!--Bootstrap CSS CDN-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <!--Bootstap icon CDN-->
+    <!--Bootstrap icon CDN-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
     <!-- Load Alpine.js (Defer Loading) -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    
-    <?php include('header.html');?>
 
+ <?php include('header.html');?>
 </head>
 <body>
     <head id="header">
@@ -26,8 +25,12 @@
         <main id="main" class="d-flex justify-content-center align-items-center" style="min-height: 60vh;">
             <div class="card shadow" style="width: 24rem;">
                 <div class="card-body">
-                    <h5 class="card-title text-center mb-4">Login</h5>
+                    <h5 class="card-title text-center mb-4">Register</h5>
                     <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your full name">
+                        </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email address</label>
                             <input type="email" class="form-control" id="email" placeholder="Enter your email">
@@ -36,13 +39,15 @@
                             <label for="password" class="form-label">Password</label>
                             <input type="password" class="form-control" id="password" placeholder="Enter your password">
                         </div>
+                        <div class="mb-3">
+                            <label for="confirm-password" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirm-password" placeholder="Confirm your password">
+                        </div>
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="submit" class="btn btn-primary">Register</button>
                         </div>
                     </form>
-                    <div class="mt-3 text-center">
-                        <p>Don't have an account? <a href="register.php">Sign up</a></p>
-                    </div>
+                   
                 </div>
             </div>
         </main>
@@ -50,7 +55,5 @@
 
     <?php include('footer.html');?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-
 </body>
 </html>

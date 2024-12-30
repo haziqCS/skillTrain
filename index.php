@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         <div class="container d-none d-md-inline">
-                            INSERT IMAGE HERE
+                            <img src="/assets/img/skillTrain.jpg" class="img-fluid" alt="...">
                         </div>
                     </div>
                 </div>
@@ -45,19 +45,19 @@
                             <p>Comparison to other online learning platforms.</p>
                             <div class="d-flex flex-column flex-md-row">
                                 <div class="card" style="width: 18rem;">
-                                    <img src="..." class="card-img-top" alt="...">
+                                    <img src="/assets/img/available.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                     </div>
                                 </div>
                                 <div class="card" style="width: 18rem;">
-                                    <img src="..." class="card-img-top" alt="...">
+                                    <img src="/assets/img/interactive.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                     </div>
                                 </div>
                                 <div class="card" style="width: 18rem;">
-                                    <img src="..." class="card-img-top" alt="...">
+                                    <img src="/assets/img/knowledge.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                     </div>
