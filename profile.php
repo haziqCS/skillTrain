@@ -18,44 +18,56 @@
 <body>
     <div class="container">
         <div class="d-flex">
-            <div class="col-3">
+            <div class="col-3 pt-5" style="background-color:lightgray";>
                 <div class="container">
                     <img src="/assets/img/cropProfile.png" alt="Profile image" style="width:130px; height:130px">
                     <h5>Firstname Lastname</h5>
                     <p>email@placeholder.com</p>
                 </div>
             </div>
-            <div class="col">
+            <div class="col p-4">
                 <div class="container">
                     <div class="container">
                         <h3>Achievement</h3>
-                        <div class="row">
+                        <div class="row min-vh-20 align-items-center">
                             <div class="col">
-                                <p>a1</p>
+                                <div class="row justify-content-center">
+                                    <img src="/assets/img/a1.png" alt="achievement1" style="height:150px;width:180px;">
+                                </div>
+                                <div class="row">
+                                    <p style="text-align:center";><b>First step</b>: Joined skillTrain</p>
+                                </div>
                             </div>
                             <div class="col">
-                                <p>a2</p>
+                                <div class="row justify-content-center">
+                                    <img src="/assets/img/a2.png" alt="achievement2" style="height:150px;width:180px;">
+                                </div>
+                                <div class="row">
+                                    <p style="text-align:center";><b>One at a time</b>: Completed a course.</p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row justify-content-center">
+                                    <img src="/assets/img/a3.png" alt="achievement3" style="height:150px;width:180px;">
+                                </div>
+                                <div class="row">
+                                    <p style="text-align:center";><b>Knowledge Sharer</b>: Share a course with a friend.</p>
+                                </div>   
                             </div>
                         </div>
                     </div>
-                    <div class="container">
+                    <div class="container p-3">
                         <h3>Registered course</h3>
-                        <div class="row">
-                            <div class="col">
-                                <p>Networking Basics</p>
-                            </div>
-                            <div class="col">
-                                <p>Python for Networking</p>
-                            </div>
-                        </div>
+                        <ul>
+                            <li>Networking Basics</li>
+                            <li>Python for Networking</li>
+                        </ul>
                     </div>
                     <div class="container">
                         <h3>Waitlist</h3>
-                        <div class="row">
-                            <div class="col">
-                                <p>Advanced Routing Techniques</p>
-                            </div>
-                        </div>
+                        <ul>
+                            <li>Advanced Routing Techniques</li>
+                        </ul>
                     </div>
                 </div>
             </div>
