@@ -47,19 +47,19 @@
                                 <div class="card" style="width: 18rem;">
                                     <img src="/assets/img/available.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <p class="card-text">Learn at your pace, anywhere, anytime.</p>
                                     </div>
                                 </div>
                                 <div class="card" style="width: 18rem;">
                                     <img src="/assets/img/interactive.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <p class="card-text">Interactive Learning, making it easier for both beginner and experienced users.</p>
                                     </div>
                                 </div>
                                 <div class="card" style="width: 18rem;">
                                     <img src="/assets/img/knowledge.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <p class="card-text">Discover a variety of course from various field of expertise.</p>
                                     </div>
                                 </div>
                             </div>
@@ -67,6 +67,21 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col p-5">
+                <div class="container" id="quote">
+                <figure class="text-center">
+                <blockquote class="blockquote">
+                    <h3>"Once you stop learning, you start dying."</h3>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                    Albert Einstein
+                </figcaption>
+                </figure>
+                </div>
+            </div>
+
+            
         </main>
     </div>
 

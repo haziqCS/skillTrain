@@ -14,156 +14,90 @@
     <!-- Load Alpine.js (Defer Loading) -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <?php include('header.html');?>
+    <link rel="stylesheet" href="style.css">
 
-    <style>
-            /* Global Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            display: flex;  /* Ensures content is aligned horizontally */
-            flex-direction: column;
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
-
-        /* Sidebar for Filter */
-        .filter-sidebar {
-            width: 250px;  /* Fixed width for the sidebar */
-            background-color: #fff;
-            padding: 60px;
-            border-right: 1px solid #ddd;
-            position: static;
-            top: 80px;  /* Fixed position below the header */
-            bottom: 300px;  /* Stops above the footer */
-            
-        }
-
-        /* Course List Styling */
-        .course-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: space-around;
-        }
-
-        /* Course Item Styling */
-        .course-item {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            width: 250px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .course-item:hover {
-            transform: scale(1.05);
-        }
-
-        .course-item h3 {
-            color: #333;
-        }
-
-        .course-item p {
-            color: #777;
-        }
-
-        .course-item button {
-            background-color: #0066cc;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .course-item button:hover {
-            background-color: #004c99;
-        }
-
-    </style>
     </head>
     
     <body>
        
-    
-        <!-- Sidebar Filter -->
-        <div class="filter-sidebar">
-            <h3>Filter by Categories</h3>
-            <label><input type="checkbox" id="networking" onchange="filterCourses()"> Networking</label>
-            <label><input type="checkbox" id="routing" onchange="filterCourses()"> Routing</label>
-            <label><input type="checkbox" id="security" onchange="filterCourses()"> Security</label>
-            <label><input type="checkbox" id="python" onchange="filterCourses()"> Python</label>
-        </div>
-    
-        <!-- Main Content Section -->
         <div class="container">
-            <h2 id="courses">Available Courses</h2>
-            <div class="course-list" id="course-list">
-                <!-- Course 1 -->
-                <div class="course-item networking">
-                    <h3>Networking Basics</h3>
-                    <p>Learn the fundamentals of networking.</p>
-                    <button>Learn More</button>
-                </div>
+            <div class="container">
+                <div class="d-flex">
+                    
+                    <!-- Sidebar Filter -->
+                    <div class="filter-sidebar">
+                        <h3>Filter by Categories</h3>
+                        <label><input type="checkbox" id="networking" onchange="filterCourses()"> Networking</label>
+                        <label><input type="checkbox" id="routing" onchange="filterCourses()"> Routing</label>
+                        <label><input type="checkbox" id="security" onchange="filterCourses()"> Security</label>
+                        <label><input type="checkbox" id="python" onchange="filterCourses()"> Python</label>
+                    </div>
     
-                <!-- Course 2 -->
-                <div class="course-item routing">
-                    <h3>Cisco Routing & Switching</h3>
-                    <p>Master routing and switching concepts with Cisco.</p>
-                    <button>Learn More</button>
-                </div>
-    
-                <!-- Course 3 -->
-                <div class="course-item security">
-                    <h3>Cybersecurity Essentials</h3>
-                    <p>Get started with cybersecurity concepts.</p>
-                    <button>Learn More</button>
-                </div>
-    
-                <!-- Course 4 -->
-                <div class="course-item python">
-                    <h3>Python for Networking</h3>
-                    <p>Learn how to use Python for network automation.</p>
-                    <button>Learn More</button>
-                </div>
-    
-                <!-- Course 5 -->
-                <div class="course-item networking">
-                    <h3>Cloud Networking</h3>
-                    <p>Understand the basics of cloud networks.</p>
-                    <button>Learn More</button>
-                </div>
-    
-                <!-- Course 6 -->
-                <div class="course-item routing">
-                    <h3>Advanced Routing Techniques</h3>
-                    <p>Dive deep into advanced routing methods.</p>
-                    <button>Learn More</button>
-                </div>
-    
-                <!-- Course 7 -->
-                <div class="course-item security">
-                    <h3>Network Security</h3>
-                    <p>Learn advanced security techniques for networks.</p>
-                    <button>Learn More</button>
-                </div>
-    
-                <!-- Course 8 -->
-                <div class="course-item networking">
-                    <h3>Wireless Networking</h3>
-                    <p>Explore the world of wireless communication.</p>
-                    <button>Learn More</button>
-                </div>
+                    <!-- Main Content Section -->
+                    <div class="container pt-5">
+                        <h2 id="courses">Available Courses</h2>
+                        <div class="course-list" id="course-list">
+                        <!-- Course 1 -->
+                    <div class="course-item networking">
+                        <h3>Networking Basics</h3>
+                        <p>Learn the fundamentals of networking.</p>
+                        <button>Learn More</button>
+                    </div>
+        
+                    <!-- Course 2 -->
+                    <div class="course-item routing">
+                        <h3>Cisco Routing & Switching</h3>
+                        <p>Master routing and switching concepts with Cisco.</p>
+                        <button>Learn More</button>
+                    </div>
+        
+                    <!-- Course 3 -->
+                    <div class="course-item security">
+                        <h3>Cybersecurity Essentials</h3>
+                        <p>Get started with cybersecurity concepts.</p>
+                        <button>Learn More</button>
+                    </div>
+        
+                    <!-- Course 4 -->
+                    <div class="course-item python">
+                        <h3>Python for Networking</h3>
+                        <p>Learn how to use Python for network automation.</p>
+                        <button>Learn More</button>
+                    </div>
+        
+                    <!-- Course 5 -->
+                    <div class="course-item networking">
+                        <h3>Cloud Networking</h3>
+                        <p>Understand the basics of cloud networks.</p>
+                        <button>Learn More</button>
+                    </div>
+        
+                    <!-- Course 6 -->
+                    <div class="course-item routing">
+                        <h3>Advanced Routing Techniques</h3>
+                        <p>Dive deep into advanced routing methods.</p>
+                        <button>Learn More</button>
+                    </div>
+        
+                    <!-- Course 7 -->
+                    <div class="course-item security">
+                        <h3>Network Security</h3>
+                        <p>Learn advanced security techniques for networks.</p>
+                        <button>Learn More</button>
+                    </div>
+        
+                    <!-- Course 8 -->
+                    <div class="course-item networking">
+                        <h3>Wireless Networking</h3>
+                        <p>Explore the world of wireless communication.</p>
+                        <button>Learn More</button>
+                    </div>
     
             </div>
         </div>
-    
-       
+                </div>
+            </div>
+        </div>
     
         <!-- JavaScript for Filtering -->
         <script>

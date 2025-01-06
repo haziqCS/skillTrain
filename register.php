@@ -26,7 +26,7 @@
             <div class="card shadow" style="width: 24rem;">
                 <div class="card-body">
                     <h5 class="card-title text-center mb-4">Register</h5>
-                    <form>
+                    <form action="index.php">
                         <div class="mb-3">
                             <label for="name" class="form-label">Full Name</label>
                             <input type="text" class="form-control" id="name" placeholder="Enter your full name">
