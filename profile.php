@@ -18,12 +18,22 @@
 <body>
     <div class="container">
         <div class="d-flex">
-            <div class="col-3 pt-5" style="background-color:lightgray";>
-                <div class="container">
-                    <img src="/assets/img/cropProfile.png" alt="Profile image" style="width:130px; height:130px">
-                    <h5>Firstname Lastname</h5>
-                    <p>email@placeholder.com</p>
-                </div>
+            <div class="col-3 pt-5 border-end">
+            <div class="container" x-data="userProfile">
+                <img src="/assets/img/cropProfile.png" alt="Profile image" style="width:130px; height:130px">
+                <h5 x-text="fullname">Firstname Lastname</h5>
+                <p x-text="email">email@placeholder.com</p>
+                <p>Registered on: <span x-text="registerDate">Not Available</span></p>
+            </div>
+             <!-- Notifications Section -->
+            <div class="mt-4" x-show="notifications.length > 0" x-data="userProfile" x-init="init()">
+                <h6><i class="bi bi-bell"></i> Notifications</h6>
+                <ul class="list-group">
+                    <template x-for="notification in notifications" :key="notification">
+                        <li class="list-group-item" x-text="notification"></li>
+                    </template>
+                </ul>
+            </div>
             </div>
             <div class="col p-4">
                 <div class="container">
@@ -56,19 +66,48 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container p-3">
-                        <h3>Registered course</h3>
-                        <ul>
-                            <li>Networking Basics</li>
-                            <li>Python for Networking</li>
-                        </ul>
+
+                    <div class="container" x-data="userProfile" x-init="init()">
+
+                    <!-- Registered Courses Section -->
+                    <h3>Registered Courses</h3>
+                    <div class="row">
+                            <template x-for="course in registeredCourses" :key="course.name">
+                                <div class="col-md-5 mb-4">
+                                    <div class="card" style="width: 100%;"> <!-- Set width to 100% to ensure proper scaling -->
+                                        <div class="card-body">
+                                            <h5 class="card-title" x-text="course.name"></h5>
+                                            <p class="card-text" x-text="course.description"></p>
+                                            <a href="#" class="btn btn-sm btn-outline-primary">View Course</a>
+                                            <a href="#" 
+                               class="btn btn-sm btn-danger ms-2" 
+                               @click.prevent="dropCourse(course)">
+                                Drop Course
+                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+
+
+                    <!-- Waitlist Section -->
+                    <h3>Waitlist</h3>
+                    <div class="row">
+                        <template x-for="course in waitlist" :key="course.name">
+                            <div class="col-md-4 mb-4">
+                                <div class="card" style="width: 100%;"> <!-- Set width to 100% to ensure proper scaling -->
+                                    <div class="card-body">
+                                        <h5 class="card-title" x-text="course.name"></h5>
+                                        <p class="card-text" x-text="course.description"></p>
+                                        <a href="#" class="btn btn-outline-primary">Join Waitlist</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
                     </div>
-                    <div class="container">
-                        <h3>Waitlist</h3>
-                        <ul>
-                            <li>Advanced Routing Techniques</li>
-                        </ul>
-                    </div>
+                </div>
+
                 </div>
             </div>
         </div>

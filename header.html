@@ -1,43 +1,43 @@
 <body>
-    <head id="header">
+    <div class="header-container" id="header-container">
+        <!-- Inside header.html or navbar section -->
         <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
             <div class="container">
-                <a href="#" class="navbar-brand">skillTrain</a>
+                <a href="index.php" class="navbar-brand">skillTrain</a>
                 <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-label="Expand Navigation">
                     <div class="navbar-toggler-icon"></div>
                 </button>
                 <div class="collapse navbar-collapse" id="nav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <form class="d-inline-flex" role="search" action="explore.php">
-                              <input class="form-control me-2" type="search" placeholder="Search Course" aria-label="Search">
-                              <button class="btn btn-outline-success" type="submit">Search</button>
+                            <!-- Search Form -->
+                            <form class="d-inline-flex" role="search" action="explore.php" method="get">
+                                <input class="form-control me-2" type="search" name="search" placeholder="Search Course" aria-label="Search" x-model="search" @keyup.enter="submitSearch()">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
                             </form>
                         </li>
                         <li class="nav-item">
-                            <a href="index.php" class="nav-link active" aria-current="page">Home</a>
+                            <a href="index.php" class="nav-link active" aria-current="page"><i class="bi bi-house text-white"></i> Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="explore.php" class="nav-link">Explore</a>
+                            <a href="explore.php" class="nav-link"><i class="bi bi-search text-white"></i> Explore</a>
                         </li>
                         <li class="nav-item">
-                            <a href="login.php" class="nav-link">Sign Up @ Login</a>
+                            <a href="login.php" class="nav-link"><i class="bi bi-pencil-square text-white"></i> Sign Up @ Login</a>
                         </li>
                         <li class="nav-item">
-                            <a href="profile.php" class="nav-link">Profile</a>
+                            <a href="profile.php" class="nav-link"><i class="bi bi-person text-white"></i> Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Support</a>
+                            <a href="#" class="nav-link"><i class="bi bi-question-circle text-white"></i> Support</a>
                         </li>
-                        <!--
                         <li class="nav-item">
-                            <a href="#" class="nav-link">About skillTrain</a>
+                            <a href="#" class="nav-link"><i class="bi bi-info-circle text-white"></i> About</a>
                         </li>
-                        -->
                     </ul>
-                    <div class="navbar-text" style="font-size: 10px;">Version 0.0.1/251224</div>
                 </div>
             </div>
         </nav>
-    </head>
+    </div>
+    <script src="/assets/js/main.js"></script>
 </body>

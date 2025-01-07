@@ -1,0 +1,133 @@
+{
+    "courses": [
+      {
+        "name": "Networking Basics",
+        "category": "networking",
+        "description": "Learn the basics of networking",
+        "estimated_duration": "3 weeks",
+        "immediate_registration": "required request",
+        "availability": "Oops, the course is full.",
+        "currently_enrolled": 25,
+        "instructor": "John Smith",
+        "ratings": 4.5,
+        "CLO": [
+          "Understand the OSI model and its layers",
+          "Configure basic network devices",
+          "Implement basic IP addressing"
+        ]
+      },
+      {
+        "name": "Cisco Routing & Switching",
+        "category": "routing",
+        "description": "Master Cisco routers and switches",
+        "estimated_duration": "6 weeks",
+        "immediate_registration": "yes",
+        "availability": "Yes, register now!",
+        "currently_enrolled": 40,
+        "instructor": "Jane Doe",
+        "ratings": 4.8,
+        "CLO": [
+          "Configure routing protocols like OSPF and EIGRP",
+          "Set up VLANs and Inter-VLAN routing",
+          "Troubleshoot network issues using Cisco tools"
+        ]
+      },
+      {
+        "name": "Cybersecurity Essentials",
+        "category": "security",
+        "description": "Learn cybersecurity fundamentals",
+        "estimated_duration": "4 weeks",
+        "immediate_registration": "required request",
+        "availability": "Yes, register now!",
+        "currently_enrolled": 30,
+        "instructor": "Alice Johnson",
+        "ratings": 4.6,
+        "CLO": [
+          "Understand the fundamentals of network security",
+          "Identify and mitigate common security threats",
+          "Implement security best practices for networks"
+        ]
+      },
+      {
+        "name": "Python for Networking",
+        "category": "python",
+        "description": "Use Python for network automation",
+        "estimated_duration": "5 weeks",
+        "immediate_registration": "yes",
+        "availability": "Oops, the course is full.",
+        "currently_enrolled": 20,
+        "instructor": "Robert Brown",
+        "ratings": 4.3,
+        "CLO": [
+          "Write Python scripts to automate network tasks",
+          "Use libraries like Netmiko and NAPALM for network automation",
+          "Understand network protocols and how to interact with them using Python"
+        ]
+      },
+      {
+        "name": "Cloud Networking",
+        "category": "networking",
+        "description": "Learn cloud networking concepts",
+        "estimated_duration": "4 weeks",
+        "immediate_registration": "required request",
+        "availability": "Yes, register now!",
+        "currently_enrolled": 15,
+        "instructor": "Emily Davis",
+        "ratings": 4.7,
+        "CLO": [
+          "Understand cloud networking architecture",
+          "Configure and manage virtual networks in cloud environments",
+          "Implement hybrid cloud networking solutions"
+        ]
+      },
+      {
+        "name": "Advanced Routing Techniques",
+        "category": "routing",
+        "description": "Master advanced routing concepts",
+        "estimated_duration": "6 weeks",
+        "immediate_registration": "yes",
+        "availability": "Yes, register now!",
+        "currently_enrolled": 35,
+        "instructor": "Michael Clark",
+        "ratings": 4.9,
+        "CLO": [
+          "Master advanced routing protocols like BGP and MPLS",
+          "Configure route redistribution and policy-based routing",
+          "Troubleshoot complex routing issues"
+        ]
+      },
+      {
+        "name": "Network Security",
+        "category": "security",
+        "description": "Learn network security best practices",
+        "estimated_duration": "5 weeks",
+        "immediate_registration": "required request",
+        "availability": "Oops, the course is full.",
+        "currently_enrolled": 22,
+        "instructor": "Sarah Lee",
+        "ratings": 4.2,
+        "CLO": [
+          "Understand key concepts in network security",
+          "Implement firewalls and intrusion detection systems",
+          "Design and deploy secure network infrastructures"
+        ]
+      },
+      {
+        "name": "Wireless Networking",
+        "category": "networking",
+        "description": "Understand wireless networking principles",
+        "estimated_duration": "3 weeks",
+        "immediate_registration": "yes",
+        "availability": "Yes, register now!",
+        "currently_enrolled": 50,
+        "instructor": "David Wilson",
+        "ratings": 4.8,
+        "CLO": [
+          "Understand wireless networking standards (802.11)",
+          "Configure and troubleshoot wireless networks",
+          "Design secure wireless network infrastructures"
+        ]
+      }
+    ]
+  }
+  
