@@ -27,35 +27,37 @@ $search = isset($_GET['search']) ? $_GET['search'] : '';
 <body>
     <?php include("header.html")?>
     <div class="container pt-5" x-data="courseFilter">
-    <div class="row">
-        <!-- Sidebar Filter -->
-        <div class="col-md-3 border-end">
-            <h3>Filter by Categories</h3>
-            <label><input type="checkbox" x-model="categories.networking"> Networking</label><br>
-            <label><input type="checkbox" x-model="categories.routing"> Routing</label><br>
-            <label><input type="checkbox" x-model="categories.security"> Security</label><br>
-            <label><input type="checkbox" x-model="categories.python"> Python</label>
-        </div>
+        <div class="row">
+            <!-- Sidebar Filter -->
+            <div class="col-md-3 border-end">
+                <h3>Filter by Categories</h3>
+                <label><input type="checkbox" x-model="categories.networking"> Networking</label><br>
+                <label><input type="checkbox" x-model="categories.routing"> Routing</label><br>
+                <label><input type="checkbox" x-model="categories.security"> Security</label><br>
+                <label><input type="checkbox" x-model="categories.python"> Python</label>
+            </div>
 
-        <!-- Courses Section -->
-        <div class="col-md-9 px-5">
-            <h2>Available Courses</h2>
+            <!-- Courses Section -->
+            <div class="col-md-9 px-5">
+                <h2>Available Courses</h2>
 
-            <div class="course-list">
-                <template x-for="course in filteredCourses" :key="course.name">
-                    <div class="course-item border p-3 mb-3">
-                        <h3 x-text="course.name"></h3>
-                        <p x-text="course.description"></p>
-                        <p><strong>Category:</strong> <span x-text="course.category"></span></p>
+                <div class="course-list">
+                    <template x-for="course in filteredCourses" :key="course.name">
+                        <div class="course-item border p-3 mb-3">
+                            <h3>
+                                <a :href="`detail.php?courseName=${encodeURIComponent(course.name)}`" x-text="course.name" class="text-decoration-none"></a>
+                            </h3>
+                            <p x-text="course.description"></p>
+                            <p><strong>Category:</strong> <span x-text="course.category"></span></p>
+                        </div>
+                    </template>
+                    <div x-show="filteredCourses.length === 0" class="text-muted">
+                        No courses found.
                     </div>
-                </template>
-                <div x-show="filteredCourses.length === 0" class="text-muted">
-                    No courses found.
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 <?php include('footer.html');?>
 </body>

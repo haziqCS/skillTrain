@@ -114,4 +114,50 @@ fetch('/assets/data/currentUser.json')
           console.log('Updated registered courses:', this.registeredCourses);
       }
   }));
+
+  Alpine.data('courseData', () => ({
+    course: {},
+    async init() {
+        // Retrieve courses from localStorage
+        const courses = JSON.parse(localStorage.getItem('courses')) || [];
+        const courseName = new URLSearchParams(window.location.search).get('courseName');
+
+        // Find the specific course by name
+        this.course = courses.find(course => course.name === courseName) || courses[0];
+
+        if (!this.course) {
+            console.error('Course not found in localStorage.');
+        }
+    },
+    getStars(rating) {
+        const fullStars = Math.floor(rating);
+        const halfStar = rating % 1 >= 0.5 ? '&#9733;' : '';
+        return '&#9733;'.repeat(fullStars) + halfStar + '&#9734;'.repeat(5 - fullStars - (halfStar ? 1 : 0));
+    },
+    showConfirmationModal() {
+      // Show the modal
+      const modal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+      modal.show();
+  },
+  registerCourse() {
+      // Hide the modal
+      const modal = bootstrap.Modal.getInstance(document.getElementById('confirmationModal'));
+      modal.hide();
+
+      if (this.course.availability !== 'Open') {
+          alert('This course is currently not available for registration.');
+          return;
+      }
+
+      if (this.course.immediate_registration === 'Yes') {
+          alert('You have successfully registered for the course!');
+      } else {
+          alert('You have successfully applied for the course!');
+      }
+
+      // Optionally, you can store the registration in localStorage or update user data here
+      // For example, adding the course to the user's registered courses list
+  }
+}));
+
 });
