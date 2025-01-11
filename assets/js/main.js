@@ -1,30 +1,27 @@
-// Fetch the JSON data from the external file
-fetch('/assets/data/courses.json')
-  .then(response => response.json())  // Parse the JSON data
-  .then(coursesData => {
-    // Save the courses data to localStorage
-    localStorage.setItem('courses', JSON.stringify(coursesData.courses));
-
-    // Optionally, you can check if the data is saved correctly by logging it to the console
-    console.log('Courses data saved to localStorage:', JSON.parse(localStorage.getItem('courses')));
-  })
-  .catch(error => {
-    console.error('Error loading the courses data:', error);
-  });
-
-  // Fetch the JSON data from the external file
-fetch('/assets/data/users.json')
-.then(response => response.json())  // Parse the JSON data
-.then(usersData => {
-  // Save the users data to localStorage
-  localStorage.setItem('users', JSON.stringify(usersData.users));
-
-  // Optionally, you can check if the data is saved correctly by logging it to the console
-  console.log('Users data saved to localStorage:', JSON.parse(localStorage.getItem('users')));
-})
-.catch(error => {
-  console.error('Error loading the users data:', error);
-});
+// Function to fetch and save data to localStorage
+function fetchDataAndSaveToLocalStorage(key, url) {
+    // Check if the data is already in localStorage
+    if (!localStorage.getItem(key)) {
+      fetch(url)
+        .then(response => response.json()) // Parse the JSON data
+        .then(data => {
+          // Save the fetched data to localStorage
+          localStorage.setItem(key, JSON.stringify(data[key]));
+  
+          // Log confirmation to the console
+          console.log(`${key} data saved to localStorage:`, data[key]);
+        })
+        .catch(error => {
+          console.error(`Error loading the ${key} data:`, error);
+        });
+    } else {
+      console.log(`${key} data already loaded from localStorage:`, JSON.parse(localStorage.getItem(key)));
+    }
+  }
+  
+  // Fetch courses and users data
+  fetchDataAndSaveToLocalStorage('courses', '/assets/data/courses.json');
+  fetchDataAndSaveToLocalStorage('users', '/assets/data/users.json');
 
 fetch('/assets/data/currentUser.json')
   .then(response => response.json())
@@ -38,6 +35,10 @@ fetch('/assets/data/currentUser.json')
     console.log('Current user data saved to localStorage:', JSON.parse(localStorage.getItem('currentUser')));
   })
   .catch(error => console.error('Error loading current user data:', error));
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log(window.location.pathname); // Should log something like "/profile.php"
+});
 
   document.addEventListener('alpine:init', () => {
     // Course Filter Component
@@ -73,47 +74,63 @@ fetch('/assets/data/currentUser.json')
     }));
 
     Alpine.data('userProfile', () => ({
-      fullname: '', 
-      email: '', 
-      registerDate: '', 
-      registeredCourses: [], 
-      waitlist: [], 
-      notifications: [], // Add notifications array 
-
-
-      init() {
-          // Retrieve user data from localStorage
-          const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-
-          if (currentUser) {
-              this.fullname = currentUser.fullname;
-              this.email = currentUser.email;
-              this.registerDate = currentUser.date_registered;
-              this.registeredCourses = currentUser.registeredCourses || [];
-              this.waitlist = currentUser.waitlist || [];
-              this.notifications = currentUser.notifications || []; // Load notifications
-
-              console.log('Notifications length:', this.notifications.length);
-          } else {
-              console.error('No user data found in localStorage.');
-          }
-      },
-
-      dropCourse(course) {
-          // Remove the course from the registeredCourses array
-          this.registeredCourses = this.registeredCourses.filter(c => c.name !== course.name);
-
-          // Update the currentUser data in localStorage
-          const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-          if (currentUser) {
-              currentUser.registeredCourses = this.registeredCourses;
-              localStorage.setItem('currentUser', JSON.stringify(currentUser));
-          }
-
-          // Optionally log the updated list to the console
-          console.log('Updated registered courses:', this.registeredCourses);
-      }
-  }));
+        fullname: '',
+        email: '',
+        registerDate: '',
+        registeredCourses: [],
+        waitlist: [],
+        notifications: [],
+        courseToDrop: null, // Store the course to be dropped
+    
+        init() {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    
+            if (currentUser) {
+                this.fullname = currentUser.fullname;
+                this.email = currentUser.email;
+                this.registerDate = currentUser.date_registered;
+                this.registeredCourses = currentUser.registeredCourses || [];
+                this.waitlist = currentUser.waitlist || [];
+                this.notifications = currentUser.notifications || [];
+            } else {
+                console.error('No user data found in localStorage.');
+            }
+        },
+    
+        dropCourse(course) {
+            // Store the course to be dropped
+            this.courseToDrop = course;
+    
+            // Show the confirmation modal
+            const modal = new bootstrap.Modal(document.getElementById('dropCourseModal'));
+            modal.show();
+        },
+    
+        confirmDropCourse() {
+            if (!this.courseToDrop) return;
+    
+            // Remove the course from the registeredCourses array
+            this.registeredCourses = this.registeredCourses.filter(c => c.name !== this.courseToDrop.name);
+    
+            // Update the currentUser data in localStorage
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            if (currentUser) {
+                currentUser.registeredCourses = this.registeredCourses;
+                localStorage.setItem('currentUser', JSON.stringify(currentUser));
+            }
+    
+            // Optionally log the updated list to the console
+            console.log('Updated registered courses:', this.registeredCourses);
+    
+            // Reset the courseToDrop
+            this.courseToDrop = null;
+    
+            // Hide the modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('dropCourseModal'));
+            modal.hide();
+        }
+    }));
+    
 
   Alpine.data('courseData', () => ({
     course: {},
@@ -134,11 +151,7 @@ fetch('/assets/data/currentUser.json')
         const halfStar = rating % 1 >= 0.5 ? '&#9733;' : '';
         return '&#9733;'.repeat(fullStars) + halfStar + '&#9734;'.repeat(5 - fullStars - (halfStar ? 1 : 0));
     },
-    showConfirmationModal() {
-      // Show the modal
-      const modal = new bootstrap.Modal(document.getElementById('confirmationModal'));
-      modal.show();
-  },
+    
   registerCourse() {
       // Hide the modal
       const modal = bootstrap.Modal.getInstance(document.getElementById('confirmationModal'));
@@ -159,5 +172,79 @@ fetch('/assets/data/currentUser.json')
       // For example, adding the course to the user's registered courses list
   }
 }));
+
+Alpine.data('courseRegistration', () => ({
+    course: {
+        name: 'Networking Basics', // Example course name
+        availability: 'Open', // Example course availability
+        immediate_registration: 'Yes' // Example registration type
+    },
+    isRegistered: false,  // Initialize as false
+    isWaitlisted: false,  // Initialize as false
+
+    init() {
+        // Access the currentUser data from localStorage
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+        if (currentUser) {
+            // Check if the course is in the registeredCourses or waitlist
+            const registeredCourses = currentUser.registeredCourses.map(c => c.name);
+            const waitlistedCourses = currentUser.waitlist.map(c => c.name);
+
+            // Update the registration status based on currentUser data
+            this.isRegistered = registeredCourses.includes(this.course.name);
+            this.isWaitlisted = waitlistedCourses.includes(this.course.name);
+        } else {
+            console.error('No user data found in localStorage.');
+        }
+    },
+
+    showConfirmationModal() {
+        // Show the confirmation modal (you need to have a modal with id 'confirmationModal' in your HTML)
+        const modal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+        modal.show();
+    },
+
+    registerCourse() {
+        // Hide the modal
+        const modal = bootstrap.Modal.getInstance(document.getElementById('confirmationModal'));
+        modal.hide();
+
+        if (this.course.availability !== 'Open') {
+            alert('This course is currently not available for registration.');
+            return;
+        }
+
+        if (this.course.immediate_registration === 'Yes') {
+            alert('You have successfully registered for the course!');
+            this.addCourseToUser('registered');
+        } else {
+            alert('You have successfully applied for the course!');
+            this.addCourseToUser('waitlisted');
+        }
+    },
+
+    addCourseToUser(status) {
+        // Retrieve the currentUser data
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+        if (currentUser) {
+            if (status === 'registered') {
+                currentUser.registeredCourses.push({
+                    name: this.course.name,
+                    description: this.course.description
+                });
+            } else if (status === 'waitlisted') {
+                currentUser.waitlist.push({
+                    name: this.course.name,
+                    description: this.course.description
+                });
+            }
+            // Save the updated currentUser data back to localStorage
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+        }
+    }
+}));
+
 
 });

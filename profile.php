@@ -78,7 +78,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title" x-text="course.name"></h5>
                                             <p class="card-text" x-text="course.description"></p>
-                                            <a href="#" class="btn btn-sm btn-outline-primary">View Course</a>
+                                            <a :href="`detail.php?courseName=${encodeURIComponent(course.name)}`" class="btn btn-sm btn-outline-primary">View Course</a>
                                             <a href="#" 
                                class="btn btn-sm btn-danger ms-2" 
                                @click.prevent="dropCourse(course)">
@@ -108,6 +108,28 @@
                     </div>
                 </div>
 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Warning Modal -->
+    <div class="modal fade" id="dropCourseModal" tabindex="-1" aria-labelledby="dropCourseModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="dropCourseModalLabel">Confirm Drop Course</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to drop this course?</p>
+                    <p class="text-danger">
+                        <strong>Note:</strong> You can easily re-register for the course later. However, courses that do not offer immediate registration mean you'll have to reapply and wait to be accepted again.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" @click="confirmDropCourse">Drop Course</button>
                 </div>
             </div>
         </div>

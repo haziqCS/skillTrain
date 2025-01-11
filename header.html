@@ -1,6 +1,15 @@
+<!-- header.php -->
+<!DOCTYPE html>
+<html lang="en" x-data="{ currentPage: window.location.pathname }">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Active Class</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+</head>
 <body>
     <div class="header-container" id="header-container">
-        <!-- Inside header.html or navbar section -->
         <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
             <div class="container">
                 <a href="index.php" class="navbar-brand">skillTrain</a>
@@ -12,32 +21,48 @@
                         <li class="nav-item">
                             <!-- Search Form -->
                             <form class="d-inline-flex" role="search" action="explore.php" method="get">
-                                <input class="form-control me-2" type="search" name="search" placeholder="Search Course" aria-label="Search" x-model="search" @keyup.enter="submitSearch()">
+                                <input class="form-control me-2" type="search" name="search" placeholder="Search Course" aria-label="Search">
                                 <button class="btn btn-outline-success" type="submit">Search</button>
                             </form>
                         </li>
                         <li class="nav-item">
-                            <a href="index.php" class="nav-link active" aria-current="page"><i class="bi bi-house text-white"></i> Home</a>
+                            <a href="index.php" class="nav-link" :class="{ 'active': currentPage === '/index.php' }">
+                                <i class="bi bi-house text-white"></i> Home
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a href="explore.php" class="nav-link"><i class="bi bi-search text-white"></i> Explore</a>
+                            <a href="explore.php" class="nav-link" :class="{ 'active': currentPage === '/explore.php' }">
+                                <i class="bi bi-search text-white"></i> Explore
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a href="login.php" class="nav-link"><i class="bi bi-pencil-square text-white"></i> Sign Up @ Login</a>
+                            <a href="login.php" class="nav-link" :class="{ 'active': currentPage === '/login.php' }">
+                                <i class="bi bi-pencil-square text-white"></i> Sign Up @ Login
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a href="profile.php" class="nav-link"><i class="bi bi-person text-white"></i> Profile</a>
+                            <a href="profile.php" class="nav-link" :class="{ 'active': currentPage === '/profile.php' }">
+                                <i class="bi bi-person text-white"></i> Profile
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link"><i class="bi bi-question-circle text-white"></i> Support</a>
+                            <a href="support.php" class="nav-link" :class="{ 'active': currentPage === '/support.php' }">
+                                <i class="bi bi-question-circle text-white"></i> Support
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link"><i class="bi bi-info-circle text-white"></i> About</a>
+                            <a href="about.php" class="nav-link" :class="{ 'active': currentPage === '/about.php' }">
+                                <i class="bi bi-info-circle text-white"></i> About
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
+
+    <!-- AlpineJS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
     <script src="/assets/js/main.js"></script>
 </body>
+</html>

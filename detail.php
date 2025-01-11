@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile</title>
+    <title>skillTrain</title>
 
     <!--Bootstap CSS CDN-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -57,7 +57,7 @@
                 <p x-text="course.estimated_duration"></p>
 
                 <h5>Availability:</h5>
-                <p><span class="badge" :class="course.availability === 'Yes, register now!' ? 'bg-success' : 'bg-danger'" x-text="course.availability"></span></p>
+                <p><span class="badge" :class="course.availability === 'Open' ? 'bg-success' : 'bg-danger'" x-text="course.availability"></span></p>
             </div>
             <div class="col-md-6">
                 <h5>Number of Students Enrolled:</h5>
@@ -81,21 +81,33 @@
         </div>
 
         <!-- Register Button -->
+<div x-data="courseRegistration">
     <div class="row">
         <div class="col-md-12 text-center">
-            <button 
-                x-bind:class="{
-                    'btn': true,
-                    'btn-primary': course.availability === 'Open' && course.immediate_registration === 'Yes',
-                    'btn-secondary': course.availability !== 'Open' || course.immediate_registration !== 'Yes',
-                    'disabled': course.availability !== 'Open'
-                }"
-                x-bind:disabled="course.availability !== 'Open'"
-                x-text="course.immediate_registration === 'Yes' ? 'Register Now' : 'Apply for this Course'"
-                @click="showConfirmationModal"
-            ></button>
+        <button 
+            x-bind:class="{
+                'btn': true,
+                'btn-primary': course.availability === 'Open' && course.immediate_registration === 'Yes' && !isRegistered && !isWaitlisted,
+                'btn-secondary': course.availability !== 'Open' || course.immediate_registration !== 'Yes' || isRegistered || isWaitlisted,
+                'disabled': course.availability !== 'Open' && !isRegistered && !isWaitlisted
+            }"
+            x-bind:disabled="course.availability !== 'Open' && !isRegistered && !isWaitlisted"
+            x-text="
+                isRegistered
+                    ? 'Yeay! You\'ve already joined this course.'
+                    : isWaitlisted
+                        ? 'Registration submitted. Please check your email/notification for updates. ; )'
+                        : course.immediate_registration === 'Yes'
+                            ? 'Register Now'
+                            : (course.availability === 'Open'
+                                ? 'Apply for this Course'
+                                : 'Oops, this course is already full.')
+            "
+            @click="!isRegistered && !isWaitlisted && showConfirmationModal"
+        ></button>
         </div>
     </div>
+</div>
 
     <!-- Confirmation Modal -->
     <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
@@ -106,7 +118,14 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Are you sure you want to <span x-text="course.immediate_registration === 'Yes' ? 'register' : 'apply'"></span> for this course?</p>
+                    <p>
+                        Are you sure you want to 
+                        <span x-text="course.immediate_registration === 'Yes' ? 'register' : 'apply'"></span> 
+                        for this course?
+                    </p>
+                    <p x-show="course.immediate_registration !== 'Yes'">
+                        You will be notified if your application is accepted.
+                    </p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
