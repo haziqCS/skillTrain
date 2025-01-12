@@ -105,6 +105,15 @@
             "
             @click="!isRegistered && !isWaitlisted && showConfirmationModal"
         ></button>
+        <!-- Button to Link to Course Lesson Page (only visible if registered) -->
+        <!-- Button to navigate to the course lesson page -->
+        <button 
+            x-show="isRegistered"
+            class="btn btn-success"
+            :disabled="!isRegistered"
+            @click="window.location.href = 'courseLesson.php?courseName=' + course.name">
+            Go to Course Lessons
+        </button>
         </div>
     </div>
 </div>

@@ -82,7 +82,7 @@
                 </div>
             </div>
 
-            <div class="row" style="height: 50vh">
+            <div class="row" style="min-height: 50vh">
                 <div class="container">
                     <h1 class="display-5 fw-bold text-body-emphasis text-center">Start Learning Now!</h1>
                     <div class="col-lg-6 mx-auto">
@@ -100,6 +100,8 @@
 
     <?php include('footer.html');?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+    
+    <!-- Initialize data -->
+    <script defer src="/assets/js/start.js"></script>
 </body>
 </html>
