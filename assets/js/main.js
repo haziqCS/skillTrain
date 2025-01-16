@@ -118,7 +118,7 @@ document.addEventListener('alpine:init', () => {
                 console.log("Availability for", this.name, ":", this.availability);
                 //this.availability = courses.availability.find(c => c.name === this.name);
                 
-                this.immediate_registration = currentUser.courses.immediate_registration.find(c => c.name === this.course.name);
+                this.immediate_registration = courses.find(course => course.name === this.name)?.immediate_registration || [];
                 this.registerDate = currentUser.date_registered;
                 this.registeredCourses = currentUser.registeredCourses || [];
                 this.waitlist = currentUser.waitlist || [];  // Ensure this is initialized as an empty array if not found
@@ -132,7 +132,8 @@ document.addEventListener('alpine:init', () => {
             if (currentUser && courses) {
                 // Check if the course is in registeredCourses
                 const registeredCourse = currentUser.registeredCourses.find(c => c.name === this.course.name);
-
+console.log('help meee');
+console.log(registeredCourse);
                 if (registeredCourse) {
                     this.isRegistered = true;
                     
@@ -297,6 +298,8 @@ document.addEventListener('alpine:init', () => {
             const courses = JSON.parse(localStorage.getItem('courses')) || [];
             const courseName = new URLSearchParams(window.location.search).get('courseName');
             this.course = courses.find(course => course.name === courseName) || courses[0];
+
+            //const isCourseRegistered = currentUser.registeredCourses.some(course => course.name === this.courseName);
 
             if (!this.course) {
                 console.error('Course not found in localStorage.');

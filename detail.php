@@ -89,7 +89,7 @@
             'btn': true,
             'btn-primary': course.availability.includes('Open') && course.immediate_registration === 'Yes' && !isRegistered && !isWaitlisted,
             'btn-secondary': !course.availability.includes('Open') || course.immediate_registration !== 'Yes' || isRegistered || isWaitlisted,
-            'disabled': !course.availability.includes('Open') && !isRegistered && !isWaitlisted
+            'disabled': !course.availability.includes   ('Open') && !isRegistered && !isWaitlisted
         }"
             x-bind:disabled="course.availability !== 'Open' && !isRegistered && !isWaitlisted"
             x-text="
