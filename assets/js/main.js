@@ -194,17 +194,71 @@ document.addEventListener('alpine:init', () => {
 
         init() {
             const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        
-            if (currentUser) {
-                const registeredCourses = currentUser.registeredCourses.map(c => c.name);
-                const waitlistedCourses = currentUser.waitlist.map(c => c.name);
-        
-                // Check if the course is in the registered courses or the waitlist
-                this.isRegistered = registeredCourses.includes(this.course.name);
-                this.isWaitlisted = waitlistedCourses.includes(this.course.name);
+            const courses = JSON.parse(localStorage.getItem('courses'));
 
+            if (currentUser) {
+                this.fullname = currentUser.fullname;
+                this.email = currentUser.email;
+                this.registerDate = currentUser.date_registered;
+                this.registeredCourses = currentUser.registeredCourses || [];
+                this.waitlist = currentUser.waitlist || [];  // Ensure this is initialized as an empty array if not found
+                this.notifications = currentUser.notifications || [];
+                console.log('User profile loaded from localStorage:', currentUser);
+            } else {
+                console.error('No user profile found in localStorage.');
+                this.waitlist = []; // Initialize waitlist in case no user is found
+            }
+
+            if (courses) {
+                this.name = courses.name.find(c => c.name === currentUser.registeredCours);
+                this.availability = courses.availability.find(c => c.name === this.course.name);
+                console.log('yatta');
+                this.immediate_registration = currentUser.courses.immediate_registration.find(c => c.name === this.course.name);
+                this.registerDate = currentUser.date_registered;
+                this.registeredCourses = currentUser.registeredCourses || [];
+                this.waitlist = currentUser.waitlist || [];  // Ensure this is initialized as an empty array if not found
+                this.notifications = currentUser.notifications || [];
+                console.log('Current course data is stored', this.availability);
+            } else {
+                console.error('No user profile found in localStorage.');
+                this.waitlist = []; // Initialize waitlist in case no user is found
+            }
+        
+            if (currentUser && courses) {
+                // Check if the course is in registeredCourses
+                const registeredCourse = currentUser.registeredCourses.find(c => c.name === this.course.name);
+
+                if (registeredCourse) {
+                    this.isRegistered = true;
+                    
+                    // Find matching course in courses data
+                    const courseData = courses.find(c => c.name === registeredCourse.name);
+                    if (courseData) {
+                        this.course.immediate_registration = courseData.immediate_registration === "Yes";
+                        this.course.availability = courseData.availability; // Update availability
+                    }
+                }
+        
+                // Check if the course is in the waitlist
+                const waitlistedCourse = currentUser.waitlist.find(c => c.name === this.course.name);
+                console.log(this.course.name);
+                if (waitlistedCourse) {
+                    this.isWaitlisted = true;
+    
+                    // Find matching course in courses data
+                    const courseData = courses.find(c => c.name === waitlistedCourse.name);
+                    if (courseData) {
+                        this.course.immediate_registration = courseData.immediate_registration === "Yes";
+                    }
+                }
+
+                console.log('Course Availability:', this.course.availability);
+                console.log('Registered Courses:', registeredCourse);
+                console.log('immediate:', registeredCourse.immediate_registration);
                 console.log('Is Registered:', this.isRegistered);
                 console.log('Is Waitlisted:', this.isWaitlisted);
+                console.log(this.course.name);
+                console.log('Course Data:', this.course);
             } else {
                 console.error('No user data found in localStorage.');
             }
@@ -279,19 +333,4 @@ document.addEventListener('alpine:init', () => {
             return this.course.lessons ? this.course.lessons[this.currentLessonIndex] : {};
         }
     }));
-});
-
-//Lesson Sidebar Toggle
-document.addEventListener("DOMContentLoaded", function () {
-    const toggler = document.querySelector(".toggler-btn");
-    toggler.addEventListener("click", function () {
-        document.querySelector("#sidebar").classList.toggle("collapsed");
-    });
-
-    const tooltipTrigger = document.getElementById('tooltipButton');
-    const tooltip = new bootstrap.Tooltip(tooltipTrigger);
-
-    tooltipTrigger.addEventListener('click', function () {
-        tooltip.hide(); // Hides the tooltip when the button is clicked
-    });
 });

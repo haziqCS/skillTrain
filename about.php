@@ -131,7 +131,7 @@ nt-size: 14px;
     <!-- Main content -->
     <main>
         <section class="about-us">
-            <div class="container">
+            <div class="container p-5">
                 <h1>About Us</h1>
                 <p>Welcome to skillTrain an online learning platform! Our objective is to provide accessible, high-quality education to learners all around the world.</p>
 

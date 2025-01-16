@@ -26,7 +26,7 @@ $search = isset($_GET['search']) ? $_GET['search'] : '';
     <div class="container pt-5" x-data="courseFilter">
         <div class="row">
             <!-- Sidebar Filter -->
-            <div class="col-md-3 border-end">
+            <div class="col-md-3 border-end ps-5 pb-5">
                 <h3>Filter by Categories</h3>
                 <label><input type="checkbox" x-model="categories.networking"> Networking</label><br>
                 <label><input type="checkbox" x-model="categories.routing"> Routing</label><br>

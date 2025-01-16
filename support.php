@@ -111,7 +111,7 @@ section p {
     <!-- Main content -->
     <main> 
     <section class="support">
-            <div class="container">
+            <div class="container p-5">
                 <h1>Support</h1>
 
                 <div class="contact-info">
@@ -124,7 +124,7 @@ section p {
                     </ul>
                 </div>
 
-                <div class="faq" id="faq">
+                <div class="faq p-2" id="faq">
                     <h2>Frequently Asked Questions (FAQ)</h2>
 
                     <div class="faq-item">
