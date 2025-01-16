@@ -70,6 +70,148 @@ document.addEventListener('alpine:init', () => {
         }
     }));
 
+    // Course Registration Component
+    Alpine.data('courseRegistration', () => ({
+        courseRegistered: {
+            name: '',
+            availability: '',
+            immediate_registration: ''
+        },
+        isRegistered: false,
+        isWaitlisted: false,
+
+        init() {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            const courses = JSON.parse(localStorage.getItem('courses'));
+
+            console.log('ini courses');
+            console.log(courses);
+            console.log('ini currentSUer');
+            console.log(currentUser);
+
+            if (currentUser) {
+                this.fullname = currentUser.fullname;
+                this.email = currentUser.email;
+                this.registerDate = currentUser.date_registered;
+                this.registeredCourses = currentUser.registeredCourses || [];
+                this.waitlist = currentUser.waitlist || [];  // Ensure this is initialized as an empty array if not found
+                this.notifications = currentUser.notifications || [];
+                console.log('User profile loaded from localStorage:', currentUser);
+            } else {
+                console.error('No user profile found in localStorage.');
+                this.waitlist = []; // Initialize waitlist in case no user is found
+            }
+
+            // Extract registered course names
+            const registeredCourseNames = currentUser.registeredCourses.map(course => course.name);
+
+            if (courses) {
+                // Filter courses that match the registered course names
+                this.name = courses.filter(course =>
+                    registeredCourseNames.includes(course.name)
+                );
+                console.log(this.name);
+                
+                // Ensure `this.name` is the name of the course you're looking for
+                this.availability = courses.find(course => course.name === this.name)?.availability || [];
+                // Debugging output
+                console.log("Availability for", this.name, ":", this.availability);
+                //this.availability = courses.availability.find(c => c.name === this.name);
+                
+                this.immediate_registration = currentUser.courses.immediate_registration.find(c => c.name === this.course.name);
+                this.registerDate = currentUser.date_registered;
+                this.registeredCourses = currentUser.registeredCourses || [];
+                this.waitlist = currentUser.waitlist || [];  // Ensure this is initialized as an empty array if not found
+                this.notifications = currentUser.notifications || [];
+                console.log('Current course data is stored', this.availability);
+            } else {
+                console.error('No user profile found in localStorage.');
+                this.waitlist = []; // Initialize waitlist in case no user is found
+            }
+        
+            if (currentUser && courses) {
+                // Check if the course is in registeredCourses
+                const registeredCourse = currentUser.registeredCourses.find(c => c.name === this.course.name);
+
+                if (registeredCourse) {
+                    this.isRegistered = true;
+                    
+                    // Find matching course in courses data
+                    const courseData = courses.find(c => c.name === registeredCourse.name);
+                    if (courseData) {
+                        this.course.immediate_registration = courseData.immediate_registration === "Yes";
+                        this.course.availability = courseData.availability; // Update availability
+                    }
+                }
+        
+                // Check if the course is in the waitlist
+                const waitlistedCourse = currentUser.waitlist.find(c => c.name === this.course.name);
+                console.log(this.course.name);
+                if (waitlistedCourse) {
+                    this.isWaitlisted = true;
+    
+                    // Find matching course in courses data
+                    const courseData = courses.find(c => c.name === waitlistedCourse.name);
+                    if (courseData) {
+                        this.course.immediate_registration = courseData.immediate_registration === "Yes";
+                    }
+                }
+
+                console.log('Course Availability:', this.course.availability);
+                console.log('Registered Courses:', registeredCourse);
+                console.log('immediate:', registeredCourse.immediate_registration);
+                console.log('Is Registered:', this.isRegistered);
+                console.log('Is Waitlisted:', this.isWaitlisted);
+                console.log(this.course.name);
+                console.log('Course Data:', this.course);
+            } else {
+                console.error('No user data found in localStorage.');
+            }
+        },
+
+        showConfirmationModal() {
+            const modal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+            modal.show();
+        },
+
+        registerCourse() {
+            const modal = bootstrap.Modal.getInstance(document.getElementById('confirmationModal'));
+            modal.hide();
+
+            if (this.course.availability !== 'Open') {
+                alert('This course is currently not available for registration.');
+                return;
+            }
+
+            if (this.course.immediate_registration === 'Yes') {
+                alert('You have successfully registered for the course!');
+                this.addCourseToUser('registered');
+            } else {
+                alert('You have successfully applied for the course!');
+                this.addCourseToUser('waitlisted');
+            }
+        },
+
+        addCourseToUser(status) {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+            if (currentUser) {
+                if (status === 'registered') {
+                    currentUser.registeredCourses.push({
+                        name: this.course.name,
+                        description: this.course.description
+                    });
+                } else if (status === 'waitlisted') {
+                    currentUser.waitlist.push({
+                        name: this.course.name,
+                        description: this.course.description
+                    });
+                }
+                localStorage.setItem('currentUser', JSON.stringify(currentUser));
+            }
+        }
+    }));
+
     // User Profile Component
     Alpine.data('userProfile', () => ({
         fullname: '',
@@ -178,131 +320,6 @@ document.addEventListener('alpine:init', () => {
                 alert('You have successfully registered for the course!');
             } else {
                 alert('You have successfully applied for the course!');
-            }
-        }
-    }));
-
-    // Course Registration Component
-    Alpine.data('courseRegistration', () => ({
-        course: {
-            name: '',
-            availability: '',
-            immediate_registration: ''
-        },
-        isRegistered: false,
-        isWaitlisted: false,
-
-        init() {
-            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-            const courses = JSON.parse(localStorage.getItem('courses'));
-
-            if (currentUser) {
-                this.fullname = currentUser.fullname;
-                this.email = currentUser.email;
-                this.registerDate = currentUser.date_registered;
-                this.registeredCourses = currentUser.registeredCourses || [];
-                this.waitlist = currentUser.waitlist || [];  // Ensure this is initialized as an empty array if not found
-                this.notifications = currentUser.notifications || [];
-                console.log('User profile loaded from localStorage:', currentUser);
-            } else {
-                console.error('No user profile found in localStorage.');
-                this.waitlist = []; // Initialize waitlist in case no user is found
-            }
-
-            if (courses) {
-                this.name = courses.name.find(c => c.name === currentUser.registeredCours);
-                this.availability = courses.availability.find(c => c.name === this.course.name);
-                console.log('yatta');
-                this.immediate_registration = currentUser.courses.immediate_registration.find(c => c.name === this.course.name);
-                this.registerDate = currentUser.date_registered;
-                this.registeredCourses = currentUser.registeredCourses || [];
-                this.waitlist = currentUser.waitlist || [];  // Ensure this is initialized as an empty array if not found
-                this.notifications = currentUser.notifications || [];
-                console.log('Current course data is stored', this.availability);
-            } else {
-                console.error('No user profile found in localStorage.');
-                this.waitlist = []; // Initialize waitlist in case no user is found
-            }
-        
-            if (currentUser && courses) {
-                // Check if the course is in registeredCourses
-                const registeredCourse = currentUser.registeredCourses.find(c => c.name === this.course.name);
-
-                if (registeredCourse) {
-                    this.isRegistered = true;
-                    
-                    // Find matching course in courses data
-                    const courseData = courses.find(c => c.name === registeredCourse.name);
-                    if (courseData) {
-                        this.course.immediate_registration = courseData.immediate_registration === "Yes";
-                        this.course.availability = courseData.availability; // Update availability
-                    }
-                }
-        
-                // Check if the course is in the waitlist
-                const waitlistedCourse = currentUser.waitlist.find(c => c.name === this.course.name);
-                console.log(this.course.name);
-                if (waitlistedCourse) {
-                    this.isWaitlisted = true;
-    
-                    // Find matching course in courses data
-                    const courseData = courses.find(c => c.name === waitlistedCourse.name);
-                    if (courseData) {
-                        this.course.immediate_registration = courseData.immediate_registration === "Yes";
-                    }
-                }
-
-                console.log('Course Availability:', this.course.availability);
-                console.log('Registered Courses:', registeredCourse);
-                console.log('immediate:', registeredCourse.immediate_registration);
-                console.log('Is Registered:', this.isRegistered);
-                console.log('Is Waitlisted:', this.isWaitlisted);
-                console.log(this.course.name);
-                console.log('Course Data:', this.course);
-            } else {
-                console.error('No user data found in localStorage.');
-            }
-        },
-
-        showConfirmationModal() {
-            const modal = new bootstrap.Modal(document.getElementById('confirmationModal'));
-            modal.show();
-        },
-
-        registerCourse() {
-            const modal = bootstrap.Modal.getInstance(document.getElementById('confirmationModal'));
-            modal.hide();
-
-            if (this.course.availability !== 'Open') {
-                alert('This course is currently not available for registration.');
-                return;
-            }
-
-            if (this.course.immediate_registration === 'Yes') {
-                alert('You have successfully registered for the course!');
-                this.addCourseToUser('registered');
-            } else {
-                alert('You have successfully applied for the course!');
-                this.addCourseToUser('waitlisted');
-            }
-        },
-
-        addCourseToUser(status) {
-            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-
-            if (currentUser) {
-                if (status === 'registered') {
-                    currentUser.registeredCourses.push({
-                        name: this.course.name,
-                        description: this.course.description
-                    });
-                } else if (status === 'waitlisted') {
-                    currentUser.waitlist.push({
-                        name: this.course.name,
-                        description: this.course.description
-                    });
-                }
-                localStorage.setItem('currentUser', JSON.stringify(currentUser));
             }
         }
     }));

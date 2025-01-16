@@ -85,12 +85,12 @@
     <div class="row">
         <div class="col-md-12 text-center">
         <button 
-            x-bind:class="{
-                'btn': true,
-                'btn-primary': course.availability === 'Open' && course.immediate_registration === 'Yes' && !isRegistered && !isWaitlisted,
-                'btn-secondary': course.availability !== 'Open' || course.immediate_registration !== 'Yes' || isRegistered || isWaitlisted,
-                'disabled': course.availability !== 'Open' && !isRegistered && !isWaitlisted
-            }"
+        x-bind:class="{
+            'btn': true,
+            'btn-primary': course.availability.includes('Open') && course.immediate_registration === 'Yes' && !isRegistered && !isWaitlisted,
+            'btn-secondary': !course.availability.includes('Open') || course.immediate_registration !== 'Yes' || isRegistered || isWaitlisted,
+            'disabled': !course.availability.includes('Open') && !isRegistered && !isWaitlisted
+        }"
             x-bind:disabled="course.availability !== 'Open' && !isRegistered && !isWaitlisted"
             x-text="
                 isRegistered
