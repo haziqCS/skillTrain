@@ -24,7 +24,7 @@
                             </div>
                         </div>
                         <div class="container d-none d-md-inline">
-                            <img src="/assets/img/skillTrain.jpg" class="img-fluid" alt="...">
+                            <img src="/assets/img/skillTrain.webp" class="img-fluid" alt="...">
                         </div>
                     </div>
                 </div>
@@ -38,20 +38,20 @@
                             <p class="lead">Comparison to other online learning platforms.</p>
                             <div class="d-flex flex-column flex-md-row">
                                 <div class="card" style="width: 18rem;">
-                                    <img src="/assets/img/available.jpg" class="card-img-top" alt="...">
+                                    <img src="/assets/img/available.webp" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <p class="card-text">Learn at your own pace, anytime, anywhere – we’re here to help you succeed!</p>
                                     </div>
                                 </div>
                                 <div class="card" style="width: 18rem;">
-                                    <img src="/assets/img/interactive.jpg" class="card-img-top" alt="...">
+                                    <img src="/assets/img/interactive.webp" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <p class="card-text">Engage in interactive learning, perfect for both beginners and experienced learners!
                                         </p>
                                     </div>
                                 </div>
                                 <div class="card" style="width: 18rem;">
-                                    <img src="/assets/img/knowledge.jpg" class="card-img-top" alt="...">
+                                    <img src="/assets/img/knowledge.webp" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <p class="card-text">Explore a wide range of courses across different fields of expertise!</p>
                                     </div>

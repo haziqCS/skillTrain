@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>skillTrain</title>
 
-    <?php include('header.html');?>
+    <?php include('../header.html');?>
 </head>
 
 <style>
@@ -76,6 +76,6 @@ section p {
             </div>
         </section>
     </main>
-    <?php include('footer.html');?>
+    <?php include('../footer.html');?>
 </body>
 </html>

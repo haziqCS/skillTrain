@@ -33,7 +33,7 @@
         <hr>
 
         <!-- Course Description -->
-        <div class="row mb-4">
+        <div class="row mb-3">
             <div class="col-md-12">
                 <h3>Description</h3>
                 <p x-text="course.description"></p>
@@ -41,7 +41,7 @@
         </div>
 
         <!-- Course Details -->
-        <div class="row mb-4">
+        <div class="row mb-3">
             <div class="col-md-6">
                 <h5>Estimated Duration:</h5>
                 <p x-text="course.estimated_duration"></p>
@@ -54,7 +54,7 @@
                 <p x-text="course.currently_enrolled"></p>
 
                 <h5>Immediate Registration:</h5>
-                <p x-text="course.immediate_registration"></p>
+                <p x-text="course.immediate_registration ? 'Yes' : 'No'"></p>
             </div>
         </div>
 
@@ -96,7 +96,6 @@
             @click="!isRegistered && !isWaitlisted && showConfirmationModal"
         ></button>
         <!-- Button to Link to Course Lesson Page (only visible if registered) -->
-        <!-- Button to navigate to the course lesson page -->
         <button 
             x-show="isRegistered"
             class="btn btn-success"
@@ -128,14 +127,42 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" @click="registerCourse">Confirm</button>
+                    <button type="button" class="btn btn-primary" @click="registerCourse" id="liveToastBtn">Confirm</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <!--Register course confirmation-->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+        <i class="bi bi-cake"></i>
+        <strong class="me-auto">&nbspskillTrain</strong>
+        <small>11 mins ago</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+        Congratulations! You have successfully registered the course.
+        </div>
+    </div>
+    </div>
+
+
     </div>
 
     <?php include('../footer.html');?>
+
+    <script>
+        const toastTrigger = document.getElementById('liveToastBtn')
+        const toastLiveExample = document.getElementById('liveToast')
+
+        if (toastTrigger) {
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+        toastTrigger.addEventListener('click', () => {
+            toastBootstrap.show()
+        })
+        }
+    </script>
 </body>
 </html>

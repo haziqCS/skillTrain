@@ -12,7 +12,7 @@
     <div class="row">
         <!-- Left Column (Profile and Notifications) -->
         <div class="col-md-3 ps-5 order-1 order-md-1 pt-5 pe-5 border-end">
-            <img src="/assets/img/cropProfile.png" alt="Profile image" style="width:130px; height:130px">
+            <img src="/assets/img/cropProfile.webp" alt="Profile image" style="width:130px; height:130px">
             <h5 x-text="fullname">Firstname Lastname</h5>
             <p x-text="email">email@placeholder.com</p>
             <p>Registered on: <span x-text="registerDate">Not Available</span></p>

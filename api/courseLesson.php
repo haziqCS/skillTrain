@@ -104,13 +104,13 @@
             <div id="carouselSlides" class="carousel slide">
                 <div class="carousel-inner align-items-center">
                     <div class="carousel-item active">
-                    <img src="../assets/img/slides1.jpg" class="d-block img-fluid" alt="...">
+                    <img src="../assets/img/slides1.webp" class="d-block img-fluid" alt="...">
                     </div>
                     <div class="carousel-item">
-                    <img src="../assets/img/slides2.jpg" class="d-block img-fluid" alt="...">
+                    <img src="../assets/img/slides2.webp" class="d-block img-fluid" alt="...">
                     </div>
                     <div class="carousel-item">
-                    <img src="../assets/img/slides3.jpg" class="d-block img-fluid" alt="...">
+                    <img src="../assets/img/slides3.webp" class="d-block img-fluid" alt="...">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlides" data-bs-slide="prev">

@@ -251,4 +251,65 @@ a.sidebar-link:hover {
         font-size: 14px;
     }
 }
+
+}
+
+section p {
+    line-height: 1.6;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.vision, .mission {
+    margin-bottom: 40px;
+}
+
+/* Team Section */
+.team {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    border-radius: 8px;
+}
+
+.team-members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background-color: #fff;
+    border-radius: 8px;
+    width: 280px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }

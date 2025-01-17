@@ -33,66 +33,6 @@ h1 {
     margin-bottom: 40px;
 } */
 
-section p {
-    line-height: 1.6;
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.vision, .mission {
-    margin-bottom: 40px;
-}
-
-/* Team Section */
-.team {
-    background-color: #f9f9f9;
-    padding: 40px 20px;
-    border-radius: 8px;
-}
-
-.team-members {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.team-member {
-    background-color: #fff;
-    border-radius: 8px;
-    width: 280px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.team-member img {
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    margin-bottom: 15px;
-    object-fit: cover;
-}
-
-.team-member h3 {
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.team-member p {
-    font-size: 14px;
-    color: #777;
-    margin-bottom: 10px;
-}
-
-.team-member:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
 nt-size: 14px;
 }
 
@@ -121,7 +61,7 @@ nt-size: 14px;
 
                     <div class="team-members">
                         <div class="team-member">
-                            <img src="images/team-member1.jpg" alt="Wan">
+                            <img src='../assets/img/wan.webp' alt="Wan">
                             <h3>Wan Muhammad Zulhaziq Bin Wan Husni</h3>
                             <p>Project Manager</p>
                             <p>Wan act as our group leader distributing tasks among us.</p>
@@ -135,14 +75,14 @@ nt-size: 14px;
                         </div>
 
                         <div class="team-member">
-                            <img src="images/team-member3.jpg" alt="Aiman">
+                            <img src='../assets/img/aiman.webp' alt="Aiman">
                             <h3>Aiman Hafizuddin Bin Mohd Marman</h3>
                             <p>Programmer</p>
                             <p>Aiman act as the one that write and test code for our website.</p>
                         </div>
 
                         <div class="team-member">
-                            <img src="images/team-member4.jpg" alt="Shahmi">
+                            <img src='../assets/img/shahmi.webp' alt="Shahmi">
                             <h3>Mohamad Amirul Shahmifitri Bin Muda</h3>
                             <p>Programmer</p>
                             <p>Shahmi act as the one that write and test code for our website.</p>

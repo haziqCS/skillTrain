@@ -132,8 +132,8 @@ document.addEventListener('alpine:init', () => {
             if (currentUser && courses) {
                 // Check if the course is in registeredCourses
                 const registeredCourse = currentUser.registeredCourses.find(c => c.name === this.course.name);
-console.log('help meee');
-console.log(registeredCourse);
+                console.log('help meee');
+                console.log(registeredCourse);
                 if (registeredCourse) {
                     this.isRegistered = true;
                     
@@ -354,3 +354,4 @@ console.log(registeredCourse);
         }
     }));
 });
+
