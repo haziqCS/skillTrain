@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,22 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>skillTrain</title>
 
-    <!--Bootstap CSS CDN-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <!--Bootstap icon CDN-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
-    <!-- Load Alpine.js (Defer Loading) -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <?php include('header.html');?>
-
+    <?php include('../header.html'); ?>
 </head>
 
 <style>
-
-
-
 
 /* Main content */
 /* main {
@@ -109,30 +96,13 @@ section p {
 nt-size: 14px;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    .team-members {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .team-member {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-}
-
-
 </style>
 <body>
-
-  
-
     <!-- Main content -->
     <main>
         <section class="about-us">
             <div class="container p-5">
-                <h1>About Us</h1>
+                <h1 class="fw-bold text-body-emphasis">About Us</h1>
                 <p>Welcome to skillTrain an online learning platform! Our objective is to provide accessible, high-quality education to learners all around the world.</p>
 
                 <div class="vision">
@@ -141,7 +111,7 @@ nt-size: 14px;
                 </div>
 
                 <div class="mission">
-                    <h2>Our Mission</h2>
+                    <h2 class="fw-bold text-body-emphasis">Our Mission</h2>
                     <p>Our mission is to empower learners of all ages to achieve their goals by providing a diverse range of online courses and certifications taught by industry experts. We are committed to making learning accessible, engaging, and flexible, so that anyone, regardless of their background, can unlock their full potential.</p>
                 </div>
 
@@ -177,15 +147,11 @@ nt-size: 14px;
                             <p>Programmer</p>
                             <p>Shahmi act as the one that write and test code for our website.</p>
                         </div>
-
-                        <!-- Add more team members as needed -->
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <?php include('footer.html');?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+    <?php include('../footer.html');?>
 </body>
 </html>

@@ -235,7 +235,7 @@ console.log(registeredCourse);
         this.notifications = currentUser.notifications || [];
         console.log('User profile loaded from localStorage:', currentUser);
     } else {
-        console.error('No user profile found in localStorage.');
+        console.log('No user profile found in localStorage.');
         this.waitlist = []; // Initialize waitlist in case no user is found
     }
 },

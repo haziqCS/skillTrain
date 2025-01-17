@@ -183,3 +183,72 @@ a.sidebar-link:hover {
     opacity: 0;
     visibility: hidden;
 }
+
+/*Support Page*/
+/* Contact Information */
+.contact-info {
+    margin-bottom: 40px;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.contact-info li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* FAQ Section */
+.faq {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    border-radius: 8px;
+}
+
+.faq-item {
+    margin-bottom: 25px;
+}
+
+.faq-item h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.faq-item p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+} */
+
+{
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    
+    /*About Page*/
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /*Support Page*/
+    .contact-info ul li {
+        font-size: 16px;
+    }
+
+    .faq-item h3 {
+        font-size: 18px;
+    }
+
+    .faq-item p {
+        font-size: 14px;
+    }
+}
+}

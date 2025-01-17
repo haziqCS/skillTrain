@@ -4,19 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Lesson</title>
-    <!--Bootstap CSS CDN-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <!--Bootstap icon CDN-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
-    <!-- Load Alpine.js (Defer Loading) -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    <link rel="stylesheet" href="/assets/css/style.css">
-
-    <?php include('header.html');?>
-
+    <?php include('../header.html');?>
 </head>
 <body>
     <div class="d-flex" x-data="courseData">
@@ -115,13 +104,13 @@
             <div id="carouselSlides" class="carousel slide">
                 <div class="carousel-inner align-items-center">
                     <div class="carousel-item active">
-                    <img src="assets/img/slides1.jpg" class="d-block img-fluid" alt="...">
+                    <img src="../assets/img/slides1.jpg" class="d-block img-fluid" alt="...">
                     </div>
                     <div class="carousel-item">
-                    <img src="assets/img/slides2.jpg" class="d-block img-fluid" alt="...">
+                    <img src="../assets/img/slides2.jpg" class="d-block img-fluid" alt="...">
                     </div>
                     <div class="carousel-item">
-                    <img src="assets/img/slides3.jpg" class="d-block img-fluid" alt="...">
+                    <img src="../assets/img/slides3.jpg" class="d-block img-fluid" alt="...">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlides" data-bs-slide="prev">
@@ -135,12 +124,8 @@
                 </div>
             </div>
         </div>
-
     </div>
-
-    
-    <?php include('footer.html');?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="/assets/js/lesson.js" defer></script>
+    <?php include('../footer.html');?>
+    <script src="../assets/js/lesson.js" defer></script>
 </body>
 </html>
