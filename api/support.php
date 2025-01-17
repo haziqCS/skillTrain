@@ -7,40 +7,13 @@
 
     <?php include('../header.html');?>
 </head>
-
-<style>
-
-/* .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-h1, h2 {
-    color: black;
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: 36px;
-    text-align: left;
-    margin-bottom: 40px;
-}
-
-section p {
-    line-height: 1.6;
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-*/
-</style>
 <body>
 
     <!-- Main content -->
     <main> 
     <section class="support">
             <div class="container p-5">
-                <h1>Support</h1>
+                <h1 class="pb-3">Support</h1>
 
                 <div class="contact-info">
                     <h2>Contact Information</h2>

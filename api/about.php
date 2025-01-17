@@ -7,36 +7,6 @@
 
     <?php include('../header.html'); ?>
 </head>
-
-<style>
-
-/* Main content */
-/* main {
-    padding: 50px 20px;
-    background-color: #fff;
-} */
-
-/* .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-} */
-
-/* h1, h2 {
-    color: #4CAF50;
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: 36px;
-    text-align: center;
-    margin-bottom: 40px;
-} */
-
-nt-size: 14px;
-}
-
-</style>
 <body>
     <!-- Main content -->
     <main>
@@ -68,7 +38,7 @@ nt-size: 14px;
                         </div>
 
                         <div class="team-member">
-                            <img src="images/team-member2.jpg" alt="Firdaus">
+                            <img src='../assets/img/firdaus.webp' alt="Firdaus">
                             <h3>Mohammad Firdaus Bin Nasir</h3>
                             <p>Technical Writer</p>
                             <p>Firdaus act as the writer for our report regarding the project.</p>
