@@ -1,22 +1,6 @@
 //Check if main.js is included
 console.log('main.js loaded');
 
-// Fetch currentUser only after login or registration
-function fetchCurrentUserData() {
-    fetch('/assets/data/currentUser.json')
-        .then(response => response.json())
-        .then(data => {
-            console.log('Current User:', data.currentUser);
-
-            // Save the user's data to localStorage
-            localStorage.setItem('currentUser', JSON.stringify(data.currentUser));
-
-            // Optionally, you can check if the data is saved correctly by logging it to the console
-            console.log('Current user data saved to localStorage:', JSON.parse(localStorage.getItem('currentUser')));
-        })
-        .catch(error => console.error('Error loading current user data:', error));
-}
-
 document.addEventListener('alpine:init', () => {
     console.log('Alpine initialized');  // Add this line to check if Alpine is properly initialized
 
@@ -27,10 +11,11 @@ document.addEventListener('alpine:init', () => {
           // Log currentUser to console
           init() {
             console.log('Current User:', this.currentUser);
+            console.log(window.location.pathname);
         },
         logout() {
             localStorage.removeItem('currentUser');
-            window.location.href = 'login.php';
+            window.location.href = 'login.html';
         }
     }));
 
@@ -58,7 +43,7 @@ document.addEventListener('alpine:init', () => {
             });
         },
         submitSearch() {
-            window.location.href = `explore.php?search=${encodeURIComponent(this.search)}`;
+            window.location.href = `explore.html?search=${encodeURIComponent(this.search)}`;
         },
         saveCurrentCourse(course) {
             // Save the course to localStorage
@@ -66,7 +51,7 @@ document.addEventListener('alpine:init', () => {
     
             // Navigate to the detail page
             const courseName = encodeURIComponent(course.name);
-            window.location.href = `detail.php?courseName=${courseName}`;
+            window.location.href = `detail.html?courseName=${courseName}`;
         }
     }));
 
@@ -354,4 +339,3 @@ document.addEventListener('alpine:init', () => {
         }
     }));
 });
-

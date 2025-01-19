@@ -313,3 +313,7 @@ section p {
     transform: translateY(-10px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
+
+.row.mb-3 {
+    min-height: 100px; /* Or an appropriate height to prevent shifts */
+  }
