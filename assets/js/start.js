@@ -23,9 +23,9 @@ function fetchDataAndSaveToLocalStorage(key, url) {
 
 // Fetch courses and users data only if not present in localStorage
 if (!localStorage.getItem('courses')) {
-    fetchDataAndSaveToLocalStorage('courses', '/assets/data/courses.json');
+    fetchDataAndSaveToLocalStorage('courses', '/api/courses.json');
 }
 
 if (!localStorage.getItem('users')) {
-    fetchDataAndSaveToLocalStorage('users', '/assets/data/users.json');
+    fetchDataAndSaveToLocalStorage('users', '/api/users.json');
 }
