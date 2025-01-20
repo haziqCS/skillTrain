@@ -1,58 +1,58 @@
 {
   "users": [
-      {
-          "fullname": "John Doe",
-          "email": "john.doe@example.com",
-          "password": "password123",
-          "notifications": [
-              "The course 'Networking Basics' is now available for registration.",
-              "New update: 'Cisco Routing & Switching' has a live Q&A session scheduled with Jane Doe.",
-              "You have unlocked a new achievement: 'Completed Networking Basics'.",
-              "Your waitlisted course 'Python for Networking' has been updated.",
-              "A new course, 'Wireless Networking', is now open for registration!"
-          ]
-      },
-      {
-          "fullname": "Jane Smith",
-          "email": "jane.smith@example.com",
-          "password": "mypassword456",
-          "notifications": [
-              "The course 'Cybersecurity Essentials' now has new video resources.",
-              "Reminder: 'Advanced Routing Techniques' starts next week!",
-              "Congratulations on completing 'Cisco Routing & Switching'!"
-          ]
-      },
-      {
-          "fullname": "Alice Johnson",
-          "email": "alice.johnson@example.com",
-          "password": "alicepassword789",
-          "notifications": [
-              "You have been enrolled in 'Cloud Networking'.",
-              "The course 'Network Security' has a new lab assignment available.",
-              "New achievement unlocked: 'Certified Cisco Routing Specialist'.",
-              "Don't miss the 'Wireless Networking' webinar by David Wilson."
-          ]
-      },
-      {
-          "fullname": "Bob Brown",
-          "email": "bob.brown@example.com",
-          "password": "bobpassword101",
-          "notifications": [
-              "The course 'Advanced Routing Techniques' has updated its schedule.",
-              "New course available: 'Network Security'.",
-              "Reminder: Your registered course 'Cybersecurity Essentials' starts tomorrow."
-          ]
-      },
-      {
-          "fullname": "Charlie Davis",
-          "email": "charlie.davis@example.com",
-          "password": "charliepassword202",
-          "notifications": [
-              "You have been added to the waitlist for 'Python for Networking'.",
-              "A new course, 'Cloud Networking', has been added to your recommendations.",
-              "Your course 'Wireless Networking' has reached full capacity.",
-              "Don't forget to complete the final assessment for 'Networking Basics'."
-          ]
-      }
+    {
+      "fullname": "John Doe",
+      "email": "john.doe@example.com",
+      "password": "password123",
+      "notifications": [
+        "The course 'Networking Basics' is now available for registration.",
+        "New update: 'Cisco Routing & Switching' has a live Q&A session scheduled with Jane Doe.",
+        "You have unlocked a new achievement: 'Completed Networking Basics'.",
+        "Your waitlisted course 'Python for Networking' has been updated.",
+        "A new course, 'Wireless Networking', is now open for registration!"
+      ]
+    },
+    {
+      "fullname": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "password": "mypassword456",
+      "notifications": [
+        "The course 'Cybersecurity Essentials' now has new video resources.",
+        "Reminder: 'Advanced Routing Techniques' starts next week!",
+        "Congratulations on completing 'Cisco Routing & Switching'!"
+      ]
+    },
+    {
+      "fullname": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "password": "alicepassword789",
+      "notifications": [
+        "You have been enrolled in 'Cloud Networking'.",
+        "The course 'Network Security' has a new lab assignment available.",
+        "New achievement unlocked: 'Certified Cisco Routing Specialist'.",
+        "Don't miss the 'Wireless Networking' webinar by David Wilson."
+      ]
+    },
+    {
+      "fullname": "Bob Brown",
+      "email": "bob.brown@example.com",
+      "password": "bobpassword101",
+      "notifications": [
+        "The course 'Advanced Routing Techniques' has updated its schedule.",
+        "New course available: 'Network Security'.",
+        "Reminder: Your registered course 'Cybersecurity Essentials' starts tomorrow."
+      ]
+    },
+    {
+      "fullname": "Charlie Davis",
+      "email": "charlie.davis@example.com",
+      "password": "charliepassword202",
+      "notifications": [
+        "You have been added to the waitlist for 'Python for Networking'.",
+        "A new course, 'Cloud Networking', has been added to your recommendations.",
+        "Your course 'Wireless Networking' has reached full capacity.",
+        "Don't forget to complete the final assessment for 'Networking Basics'."
+      ]
+    }
   ]
 }

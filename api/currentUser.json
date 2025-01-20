@@ -1,39 +1,38 @@
 {
-    "currentUser": {
-      "fullname": "Jane Doe",
-      "email": "jane.doe@example.com",
-      "password": "securepassword123",
-      "date_registered": "2025-01-07",
-      "achievements": [
-        "Completed Networking Basics",
-        "Certified Cisco Routing Specialist",
-        "Achieved Cybersecurity Fundamentals Badge"
-      ],
-      "registeredCourses": [
-    {
-      "name": "Networking Basics",
-      "description": "Learn the basics of networking"
-    },
-    {
-      "name": "Python for Networking",
-      "description": "Use Python for network automation"
-    },
-    {
+  "currentUser": {
+    "fullname": "Jane Doe",
+    "email": "jane.doe@example.com",
+    "password": "securepassword123",
+    "date_registered": "2025-01-07",
+    "achievements": [
+      "Completed Networking Basics",
+      "Certified Cisco Routing Specialist",
+      "Achieved Cybersecurity Fundamentals Badge"
+    ],
+    "registeredCourses": [
+      {
+        "name": "Networking Basics",
+        "description": "Learn the basics of networking"
+      },
+      {
+        "name": "Python for Networking",
+        "description": "Use Python for network automation"
+      },
+      {
         "name": "Cybersecurity Essentials",
         "description": "Learn cybersecurity fundamentals"
       }
-  ],
-  "waitlist": [
-    {
-      "name": "Advanced Routing Techniques",
-      "description": "Master advanced routing concepts"
-    }
-  ],
-  "notifications": [
+    ],
+    "waitlist": [
+      {
+        "name": "Advanced Routing Techniques",
+        "description": "Master advanced routing concepts"
+      }
+    ],
+    "notifications": [
       "You have a new message from the admin.",
       "Your course 'Networking Basics' has been updated.",
       "New achievements unlocked: Cybersecurity Fundamentals Badge!"
     ]
-    }
   }
-  
+}

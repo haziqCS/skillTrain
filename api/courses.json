@@ -19,18 +19,12 @@
         {
           "id": 1,
           "name": "Introduction to Networking",
-          "slides": [
-            { "image": "slide1.jpg" },
-            { "image": "slide2.jpg" }
-          ]
+          "slides": [{ "image": "slide1.jpg" }, { "image": "slide2.jpg" }]
         },
         {
           "id": 2,
           "name": "IP Addressing and Subnetting",
-          "slides": [
-            { "image": "slide3.jpg" },
-            { "image": "slide4.jpg" }
-          ]
+          "slides": [{ "image": "slide3.jpg" }, { "image": "slide4.jpg" }]
         }
       ]
     },
@@ -53,18 +47,12 @@
         {
           "id": 1,
           "name": "Introduction to Cisco Routers",
-          "slides": [
-            { "image": "slide1.jpg" },
-            { "image": "slide2.jpg" }
-          ]
+          "slides": [{ "image": "slide1.jpg" }, { "image": "slide2.jpg" }]
         },
         {
           "id": 2,
           "name": "Configuring Routing Protocols",
-          "slides": [
-            { "image": "slide3.jpg" },
-            { "image": "slide4.jpg" }
-          ]
+          "slides": [{ "image": "slide3.jpg" }, { "image": "slide4.jpg" }]
         }
       ]
     },
@@ -87,18 +75,12 @@
         {
           "id": 1,
           "name": "Introduction to Cybersecurity",
-          "slides": [
-            { "image": "slide1.jpg" },
-            { "image": "slide2.jpg" }
-          ]
+          "slides": [{ "image": "slide1.jpg" }, { "image": "slide2.jpg" }]
         },
         {
           "id": 2,
           "name": "Network Security Threats",
-          "slides": [
-            { "image": "slide3.jpg" },
-            { "image": "slide4.jpg" }
-          ]
+          "slides": [{ "image": "slide3.jpg" }, { "image": "slide4.jpg" }]
         }
       ]
     },
@@ -121,18 +103,12 @@
         {
           "id": 1,
           "name": "Python Basics for Networking",
-          "slides": [
-            { "image": "slide1.jpg" },
-            { "image": "slide2.jpg" }
-          ]
+          "slides": [{ "image": "slide1.jpg" }, { "image": "slide2.jpg" }]
         },
         {
           "id": 2,
           "name": "Automating Network Tasks with Python",
-          "slides": [
-            { "image": "slide3.jpg" },
-            { "image": "slide4.jpg" }
-          ]
+          "slides": [{ "image": "slide3.jpg" }, { "image": "slide4.jpg" }]
         }
       ]
     },
@@ -155,18 +131,12 @@
         {
           "id": 1,
           "name": "Introduction to Cloud Networking",
-          "slides": [
-            { "image": "slide1.jpg" },
-            { "image": "slide2.jpg" }
-          ]
+          "slides": [{ "image": "slide1.jpg" }, { "image": "slide2.jpg" }]
         },
         {
           "id": 2,
           "name": "Managing Virtual Networks in the Cloud",
-          "slides": [
-            { "image": "slide3.jpg" },
-            { "image": "slide4.jpg" }
-          ]
+          "slides": [{ "image": "slide3.jpg" }, { "image": "slide4.jpg" }]
         }
       ]
     },
@@ -189,18 +159,12 @@
         {
           "id": 1,
           "name": "Advanced Routing Protocols",
-          "slides": [
-            { "image": "slide1.jpg" },
-            { "image": "slide2.jpg" }
-          ]
+          "slides": [{ "image": "slide1.jpg" }, { "image": "slide2.jpg" }]
         },
         {
           "id": 2,
           "name": "BGP and MPLS Configuration",
-          "slides": [
-            { "image": "slide3.jpg" },
-            { "image": "slide4.jpg" }
-          ]
+          "slides": [{ "image": "slide3.jpg" }, { "image": "slide4.jpg" }]
         }
       ]
     },
@@ -223,18 +187,12 @@
         {
           "id": 1,
           "name": "Introduction to Network Security",
-          "slides": [
-            { "image": "slide1.jpg" },
-            { "image": "slide2.jpg" }
-          ]
+          "slides": [{ "image": "slide1.jpg" }, { "image": "slide2.jpg" }]
         },
         {
           "id": 2,
           "name": "Firewalls and Intrusion Detection",
-          "slides": [
-            { "image": "slide3.jpg" },
-            { "image": "slide4.jpg" }
-          ]
+          "slides": [{ "image": "slide3.jpg" }, { "image": "slide4.jpg" }]
         }
       ]
     },
@@ -257,18 +215,12 @@
         {
           "id": 1,
           "name": "Introduction to Wireless Networking",
-          "slides": [
-            { "image": "slide1.jpg" },
-            { "image": "slide2.jpg" }
-          ]
+          "slides": [{ "image": "slide1.jpg" }, { "image": "slide2.jpg" }]
         },
         {
           "id": 2,
           "name": "Configuring Wireless Networks",
-          "slides": [
-            { "image": "slide3.jpg" },
-            { "image": "slide4.jpg" }
-          ]
+          "slides": [{ "image": "slide3.jpg" }, { "image": "slide4.jpg" }]
         }
       ]
     }
