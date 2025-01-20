@@ -1,6 +1,6 @@
 // Fetch currentUser only after login or registration
 function fetchCurrentUserData() {
-    fetch('/api/currentUser.json')
+    fetch('../api/currentUser.json')
         .then(response => response.json())
         .then(data => {
             console.log('Current User:', data.currentUser);

@@ -6,7 +6,7 @@ function loadHeader() {
         return;
     }
 
-    fetch('/components/header.html')
+    fetch('/skillTrain/components/header.html')
         .then(response => response.text())
         .then(data => {
             headerElement.innerHTML = data;
@@ -22,7 +22,7 @@ function loadFooter() {
         return;
     }
 
-    fetch('/components/footer.html')
+    fetch('/skillTrain/components/footer.html')
         .then(response => response.text())
         .then(data => {
             footerElement.innerHTML = data;
